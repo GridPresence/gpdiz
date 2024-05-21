@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gpdiz"
+version = "0.0.0"
+authors = [{ name = "An Unknown Coder", email = "an.unknown.coder@tlmpartners.com" }]
+description = "Some sort of package"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = []

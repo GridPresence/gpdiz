@@ -1,0 +1,1 @@
+This would be an interesting place to put some gpdiz documentation.
