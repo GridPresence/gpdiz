@@ -21,6 +21,6 @@ format:
 check: format lint typehint test
 
 .PHONY: local
-local: check
+local: format lint typehint
 	python3 -m build --no-isolation --outdir ${BUILD}/${MODULE}/dist
 	./local-install
