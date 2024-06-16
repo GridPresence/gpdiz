@@ -72,7 +72,7 @@ class Factory:
         subprocess.run(cmd, check=True)
         if not outp.exists:
             outp.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy(src=tmpf, dst=outp.path)
+        shutil.copyfile(src=tmpf, dst=outp.path)
         tmpf.unlink()
 
     def _estimate_mp3_bitrate(self, inp: LibFile):
