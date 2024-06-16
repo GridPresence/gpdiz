@@ -28,7 +28,7 @@ class Factory:
         if not outp.exists:
             outp.parent.mkdir(parents=True, exist_ok=True)
         # print(f"   copying:\n  {str(inp.path)}\n  {str(outp.path)}")
-        shutil.copy(src=inp.path, dst=outp.path)
+        shutil.copyfile(src=inp.path, dst=outp.path)
 
     def _convert_playlist(self, inp: LibFile, outp: LibFile) -> None:
         """
