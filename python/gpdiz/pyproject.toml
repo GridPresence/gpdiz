@@ -14,4 +14,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+]
+[project.scripts]
+diz = "gpdiz.__main__:main"
