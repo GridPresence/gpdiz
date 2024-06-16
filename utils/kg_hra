@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+MASTER="/nfs/public/Shared Music"
+HRA="/media/usb01/HRA"
+diz lib shift-hr-flac  ${MASTER} ${HRA}
