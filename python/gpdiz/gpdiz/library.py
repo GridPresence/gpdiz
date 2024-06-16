@@ -62,9 +62,11 @@ def shift_hr_flac(
             if item.suffix in [".flac"]:
                 ff = FlacFile(sbj=LibFile(src=item))
                 if ff.hires:
+                    print(f"stack: {tmp}")
                     dirs.append(tmp)
     factory: Factory = Factory()
     for item2 in tw.targeted_files(targets=dirs):
+        print(f" copy: {str(item2)}")
         lf = LibFile(src=item2)
         newitem = lf.transplant(root=src, dest=dst)
         nf = LibFile(src=newitem)
