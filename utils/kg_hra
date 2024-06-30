@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-MASTER="/nfs/public/Shared Music"
-HRA=/media/usb01/HRA
-echo diz lib shift-hr-flac  "$MASTER "$HRA"
+
+MASTER=/nfs/public/Audio/Music
+HRA=/nfs/public/Audio/HRA
+echo diz lib shift-hr-flac  "$MASTER" "$HRA"
 diz lib shift-hr-flac  "$MASTER" "$HRA"

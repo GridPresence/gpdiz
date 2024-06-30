@@ -162,3 +162,5 @@ cython_debug/
 build/
 # Mac crap
 .DS_Store
+nohup.out
+

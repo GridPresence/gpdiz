@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+MASTER=/nfs/public/Audio/Music
+MP3=/nfs/public/Audio/MP3
+echo diz lib shift-mp3  "$MASTER" "$MP3"
+diz lib shift-mp3  "$MASTER" "$MP3"
