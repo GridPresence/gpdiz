@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+echo "-------- Executing igor_sphinx"
+echo " Target = "$IGOR_TARGET
+echo " Deploy = "$IGOR_DEPLOY
+echo $(pwd)
+
+make clean
+make preprocess
+make html
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Make failures"
+    exit $retVal
+fi
+if [[ -v IGOR_DEPLOY ]]; then
+    # This where we package the HTML as a site and push it into the repository
+    make deploy
+fi
+echo "-------- Exiting igor_sphinx"

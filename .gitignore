@@ -159,8 +159,12 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+<<<<<<< HEAD
 build/
 # Mac crap
 .DS_Store
 nohup.out
 
+=======
+.DS_Store
+>>>>>>> ed3cd83 (Holiday push)

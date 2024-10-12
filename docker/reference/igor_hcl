@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+echo "-------- Executing igor_hcl"
+# Set up some Terraform repository values
+export NAMESPACE="tlm"
+export PROVIDER="aws"
+
+# Some environment variables for module substitution
+export AWS_PROVIDER_SOURCE="hashicorp/aws"
+export AWS_PROVIDER_VERSION=">= 5.21"
+
+# Deploying if requested
+if [[ -v IGOR_DEPLOY ]]; then 
+    echo "Making a deployment"
+    make deploy
+else
+    if [[ -v IGOR_SRC_BUNDLE ]]; then 
+        echo "Making a bundle"
+        make bundle
+    else
+        make check
+    fi
+fi
+
+echo "-------- Exiting igor_hcl"

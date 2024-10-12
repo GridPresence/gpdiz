@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+echo "-------- Executing igor_tex"
+echo " Target = "$IGOR_TARGET
+echo " Deploy = "$IGOR_DEPLOY
+echo $(pwd)
+
+make clean
+make check
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Make failures"
+    exit $retVal
+fi
+
+if [[ -v IGOR_DEPLOY ]]; then
+    # This where we use the non-default techopsdocs profile to upload
+	aws s3 cp $IGOR_BUILD/$IGOR_TARGET/$IGOR_TARGET.pdf s3://techopsdocs.tlmpartners-internal.com/$IGOR_TARGET/$IGOR_TARGET.pdf --profile techopsdocs
+fi
+echo "-------- Exiting igor_tex"

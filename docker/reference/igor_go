@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+# Copyright Endava Games. All Rights Reserved
+echo "-------- Executing igor_go_make"
+
+export CGO_ENABLED=0
+
+echo " Target = "$IGOR_TARGET
+if [[ -v IGOR_DEPLOY ]]; then
+    echo " Deploy = "$IGOR_DEPLOY
+fi
+echo $(pwd)
+
+if [[ -v IGOR_DEPLOY ]]; then
+    make deploy
+else
+    make check
+fi
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Make failures"
+    exit $retVal
+fi
+echo "-------- Exiting igor_go_make"
+
+exit 0
+
+# This is probably dead code now
+echo "-------- Executing igor_go"
+# This is a holding position for Go-lang lambda functions
+# until there's time to sort out the Makefile approach and generalise
+# the approach for all Go targets.
+echo $(pwd)
+
+#go tool dist list
+
+export GO_REPO=golangusrvcs
+export ORGPATH=$IGOR_ORG/$IGOR_TARGET
+echo "ORGPATH = "$ORGPATH
+
+if [ ! -f go.mod ]; then
+    go mod init $ORGPATH
+fi
+
+# Don't put stuff in the working directory, because that
+# will just leave detritus in your workspace
+BIN=$IGOR_BUILD/go/bin
+PKG=$IGOR_BUILD/go/packages
+rm -fr $BIN $PKG
+mkdir -p $BIN $PKG
+# Build all the lambda functions there are
+echo ++++++++++ Building for $GOOS $GOARCH ++++++++++
+go mod tidy
+for d in functions/* ; do
+    if [ -f $d/main.go ]; then 
+        target=`basename $d`
+        echo $target
+        pushd $d
+        #go build -ldflags="-s -w" -o /tmp/bin/$target nDreams/grey-backend/$d
+        echo "go build -tags lambda.norpc -buildvcs=false -ldflags=\"-s -w\" -o $BIN/$target main.go"
+        go build -tags lambda.norpc -buildvcs=false -ldflags="-s -w" -o $BIN/$target main.go
+        popd
+    fi
+done
+
+if [[ -v IGOR_DEPLOY ]]; then
+    # Zip each function up
+    echo ++++++++++ Packaging into $GO_REPO on $ORGPATH ++++++++++
+    pushd $BIN
+    for d in * ; do
+        echo $d
+        VERSION=`igor pkg vnum-plus $d $IGOR_PATCH_LEVEL`
+        zip $PKG/$d-$VERSION.zip $d
+        # Upload the zip file
+        #jf rt u --flat=true $PKG/$d-$VERSION.zip $GO_REPO/$ORGPATH/$d/$d-$VERSION.zip
+        ASSET_SHA256=$(sha256sum $PKG/$d-$VERSION.zip | awk '{print $1;}')
+        aws codeartifact publish-package-version --domain tlm --repository tlm-princeps --format generic --package $d --namespace $IGOR_ORG --package-version $VERSION --asset-content $PKG/$d-$VERSION.zip --asset-name $d-$VERSION.zip --asset-sha256 $ASSET_SHA256
+    done
+    popd
+    # Cleaning up
+    rm -fr $BIN $PKG
+fi
+
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Make failures"
+    exit $retVal
+fi
+
+echo "-------- Exiting igor_go"

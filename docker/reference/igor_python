@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+echo "-------- Executing igor_python"
+echo " Target = "$IGOR_TARGET
+if [[ -v IGOR_DEPLOY ]]; then
+    echo " Deploy = "$IGOR_DEPLOY
+fi
+echo $(pwd)
+
+if [[ -v IGOR_DEPLOY ]]; then
+    make deploy
+else
+    make check
+fi
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Make failures"
+    exit $retVal
+fi
+echo "-------- Exiting igor_python"

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+DESTINATION_DIR=${DESTINATION_DIR:-$PWD}
+MODULE_DIR=${MODULE_DIR:-$PWD}
+ZIPFILE_NAME=${ZIPFILE_NAME:-layer}
+echo "Module dir $MODULE_DIR"
+echo "Destination dir $DESTINATION_DIR"
+
+TARGET_DIR=$DESTINATION_DIR/$ZIPFILE_NAME
+echo "Target dir $TARGET_DIR"
+mkdir -p "$TARGET_DIR"
+echo "Name version $NAME_VERSION"
+python3 -m pip install "$NAME_VERSION" -t "$TARGET_DIR"/python --ignore-installed --no-cache-dir -qqq
+(cd "$TARGET_DIR" && zip -rq "$DESTINATION_DIR"/"$ZIPFILE_NAME".zip ./* -x "*.dist-info*" -x "*__pycache__*" -x "*.egg-info*")
+rm -r "$TARGET_DIR"

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+export ENVS=iac/envs
+echo "-------- Executing igor_packer"
+echo "           TARGET_ENV: "$TARGET_ENV
+echo "       IGOR_DEPLOY: "$IGOR_DEPLOY
+echo "        CLEAN_ENVIRON: "$CLEAN_ENVIRON
+echo " "
+
+# Drop down into the target environment's subdirectory
+pushd $ENVS/$TARGET_ENV
+
+make check
+
+popd
+echo "-------- Exiting igor_packer"

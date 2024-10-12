@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+echo "-------- Executing igor_iac"
+export TF_VAR_igor=$(which igor)
+export TF_VAR_scraps=$(which scraps)
+# printenv | sort | grep "AWS_*"
+printenv | sort | grep "IAC_*"
+printenv | sort | grep "TF_VAR*"
+# Drop down into the target client's environment subdirectory
+pushd ${IAC_CUSTOMER_PROJECT_DIR}/${IAC_TARGET_ENV}
+
+echo "Using $IAC_TOOL"
+
+if [[ -v IGOR_DESTROY ]]; then
+    make destroy
+else
+    if [[ -v IGOR_DEPLOY ]]; then
+        make deploy
+    else
+        make check
+    fi
+fi
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Make failures"
+    exit $retVal
+fi
+popd
+
+echo "-------- Exiting igor_iac"

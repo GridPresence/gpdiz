@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+echo "-------- Executing bldr_python"
+echo " Target = "$BLDR_TARGET
+if [[ -v BLDR_DEPLOY ]]; then
+    echo " Deploy = "$BLDR_DEPLOY
+fi
+echo $(pwd)
+
+if [[ -v BLDR_DEPLOY ]]; then
+    make deploy
+else
+    make check
+fi
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Make failures"
+    exit $retVal
+fi
+echo "-------- Exiting bldr_python"

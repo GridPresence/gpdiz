@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+echo "-------- Executing igor_pkg"
+echo " Target = "$IGOR_TARGET
+echo $(pwd)
+
+make -k all
+
+#retVal=$?
+#if [ $retVal -ne 0 ]; then
+#    echo "Make failures"
+#    exit $retVal
+#fi
+echo "-------- Exiting igor_pkg"

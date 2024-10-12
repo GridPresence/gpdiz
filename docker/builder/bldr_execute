@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+echo "---- Executing bldr"
+source /usr/local/bin/bldr_env.sh
+
+
+# Only released components are usually installed
+echo "Installing bldr's python requirements"
+# if [[ "$BLDR_EXEC" = "pkg" ]]; then
+#     echo "We can't use bldr to update/install bldr here."
+#     echo "( Chicken vs. egg paradox. )"
+#     echo "... Skipping bldr updates duing pkg migrations."
+# else
+#     # Make sure local bits are up to date
+#     export BLDR_BITS="edgcore edggen edgaws edgigor"
+#     # Accomodate the choice of release or pre-release bldr components
+#     if [[ -z $BLDR_DEVELOP ]]; then
+#         python3 -m pip install $BLDR_BITS --upgrade --break-system-packages
+#     else
+#         python3 -m pip install $BLDR_BITS --upgrade --pre --break-system-packages
+#     fi
+# fi
+echo "-- Configure container environment"
+#bldr self configure --twine
+# Useful visual confirmations
+echo "-- Checking configuration settings"
+echo "      PATH = "$PATH
+echo "   WORKDIR = "$(pwd)
+# Set up the path to the language-specific implementation
+export LOCAL_EXEC="/usr/local/bin/bldr_"$BLDR_EXEC
+echo "LOCAL_EXEC = "$LOCAL_EXEC
+
+# If this is launched from the incorrect subdirectory,
+# the script will error out.
+pushd $BLDR_EXEC/$BLDR_TARGET
+retVal=$?
+if [ $retVal -ne 0 ]; then
+    echo "Failed to CD into "$BLDR_EXEC/$BLDR_TARGET
+    exit $retVal
+fi
+# Execute the specific script for the target language model
+source $LOCAL_EXEC
+# Return to the working director
+popd
+echo "---- Exiting bldr"
