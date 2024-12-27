@@ -1,10 +1,10 @@
 #
 # Copyright Grid Presence. All Rights Reserved
 #
-FROM ubuntu:24.04 AS builder
+FROM ubuntu:24.04 AS dzbld
 ENV DEBIAN_FRONTEND=noninteractive
 
-ENV SERVICE_NAME="builder"
+ENV SERVICE_NAME="dzbld"
 ENV NEWHOME=/home/$SERVICE_NAME
 ENV IGORUID=4321
 ENV GID=1234

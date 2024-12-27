@@ -1,4 +1,4 @@
-TARGET = builder
+TARGET = dzbld
 RETARGET = ${TARGET}-${PLATFORM_ARCH}
 BLDR_BUILD := ../../build
 LOG_FILE := ${BLDR_BUILD}/${TARGET}_build.log
