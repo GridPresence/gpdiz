@@ -15,55 +15,70 @@ class FlacFile:
 
     def __init__(self, sbj: LibFile):
         self._sbj: LibFile = sbj
-        self._valid: bool = False
-        self._hires: bool = False
-        self._genre: str = ""
+        self._mdata: Dict[str, Any] = {}
+        self._mdata["valid"] = False
+        self._mdata["hires"] = False
         if (self._sbj.exists) and (self._sbj.suffix == ".flac"):
-            self._valid = True
-        if self._valid:
+            self._mdata["valid"] = True
+        if self._mdata["valid"]:
             self._flac: FLAC = FLAC(self._sbj.path)
-            self._info: StreamInfo = self._flac.info
-            if (self.bits_per_sample > 16) or (self.sample_rate > 44100):
-                self._hires = True
-            self._genre = str(self._flac["GENRE"][0])
+            _info: StreamInfo = self._flac.info
+            self._mdata["sample_rate"] = _info.sample_rate
+            self._mdata["bits_per_sample"] = _info.bits_per_sample
+            self._mdata["channels"] = _info.channels
+            self._mdata["bitrate"] = _info.bitrate
+            if (self._mdata["bits_per_sample"] > 16) or (
+                self._mdata["sample_rate"] > 44100
+            ):
+                self._mdata["hires"] = True
+            self._mdata["genre"] = str(self._flac["GENRE"][0])
+
+    @property
+    def valid(self):
+        """Accessor"""
+        return self._mdata["valid"]
 
     @property
     def sample_rate(self) -> int:
         """Accessor"""
-        if self._valid:
-            return self._info.sample_rate
+        if self.valid:
+            return self._mdata["sample_rate"]
         return -1
 
     @property
     def bits_per_sample(self) -> int:
         """Accessor"""
-        if self._valid:
-            return self._info.bits_per_sample
+        if self.valid:
+            return self._mdata["bits_per_sample"]
         return -1
 
     @property
     def channels(self) -> int:
         """Accessor"""
-        if self._valid:
-            return self._info.channels
+        if self.valid:
+            return self._mdata["channels"]
         return -1
 
     @property
     def bitrate(self) -> int:
         """Accessor"""
-        if self._valid:
-            return self._info.bitrate
+        if self.valid:
+            return self._mdata["bitrate"]
         return -1
 
     @property
     def hires(self) -> bool:
         """Accessor"""
-        return self._hires
+        if self.valid:
+            return self._mdata["hires"]
+        return False
 
     @property
     def genre(self) -> str:
         """Accessor"""
-        return self._genre
+        if self.valid:
+            return self._mdata["genre"]
+        return "NULL"
 
     def debug(self):
         """
@@ -72,12 +87,4 @@ class FlacFile:
         print(self._flac.pprint())
 
     def __str__(self) -> str:
-        struct: Dict[str, Any] = {}
-        struct["sample_rate"] = self.sample_rate
-        struct["bits_per_sample"] = self.bits_per_sample
-        struct["hires"] = self.hires
-        struct["file"] = self._sbj.name
-        struct["modified"] = self._sbj.modified
-        struct["size"] = self._sbj.size
-
-        return json.dumps(struct)
+        return json.dumps(self._mdata)

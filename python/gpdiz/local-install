@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python3 -m pip install --no-index --find-links=build/gpdiz/dist --force-reinstall gpdiz
+python3 -m pip install --no-index --find-links=build/gpdsp/dist --force-reinstall gpdsp

@@ -11,7 +11,7 @@ import typer
 from .libfile import LibFile
 from .treewalker import TreeWalker
 from .flacfile import FlacFile
-from .factory import Factory
+from .factory import FileFactory
 
 app = typer.Typer()
 
@@ -27,7 +27,7 @@ def shift_mp3(
     """
     src = Path(source)
     dst = Path(destination)
-    factory: Factory = Factory()
+    factory: FileFactory = FileFactory()
     tw = TreeWalker()
     for item in tw.files(root=Path(source)):
         lf = LibFile(src=item)
@@ -64,7 +64,7 @@ def shift_hr_flac(
                 if ff.hires:
                     print(f"stack: {tmp}")
                     dirs.append(tmp)
-    factory: Factory = Factory()
+    factory: FileFactory = FileFactory()
     for item2 in tw.targeted_files(targets=dirs):
         print(f" copy: {str(item2)}")
         lf = LibFile(src=item2)
@@ -90,7 +90,7 @@ def prune_mp3(
     mst = Path(master)
     tw = TreeWalker()
     mstitems: List[LibFile] = []
-    factory: Factory = Factory()
+    factory: FileFactory = FileFactory()
     for item in tw.files(root=src):
         mstitems = []
         lf = LibFile(src=item)

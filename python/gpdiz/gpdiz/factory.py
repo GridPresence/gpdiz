@@ -9,10 +9,11 @@ from pathlib import Path
 from typing import Dict, List
 from .libfile import LibFile
 from .flacfile import FlacFile
+from .mp3file import Mp3Tags
 
 
 # pylint: disable=too-few-public-methods
-class Factory:
+class FileFactory:
     """
     Factory class for aggregating intelligent methods for translation and copying
     """
@@ -50,6 +51,11 @@ class Factory:
         Implements a format conversion to MP3
         """
         inf = str(inp.path)
+        #
+        flf: FlacFile = FlacFile(inp)
+        print(str(flf))
+        flf.debug()
+        #
         tmpf = Path("/tmp", outp.name)
         if tmpf.exists():
             tmpf.unlink()
@@ -74,6 +80,8 @@ class Factory:
             outp.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src=tmpf, dst=outp.path)
         tmpf.unlink()
+        discard: Mp3Tags = Mp3Tags(sbj=LibFile(src=outp.path))
+        discard.debug()
 
     def _estimate_mp3_bitrate(self, inp: LibFile):
         retval: str = self._default_bitrate
