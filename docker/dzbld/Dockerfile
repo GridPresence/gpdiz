@@ -53,4 +53,4 @@ WORKDIR $NEWHOME/work
 # Don't want to run as root
 USER $SERVICE_NAME
 
-CMD ["bash", "bldr_execute"]
+CMD ["bash", "./execute"]
