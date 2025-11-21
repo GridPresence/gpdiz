@@ -1,0 +1,361 @@
+{
+    "source": "/Volumes/LC-8T-02/FLAC/Music",
+    "target": "/Volumes/OT-5TB-01/Astell",
+    "selections": {
+        "Choral": {
+            "Davis, Colin & London Symphony Orchestra": [
+                "*"
+            ]
+        },
+        "Classical": {
+            "Steinberg, William": [
+                "*"
+            ],
+            "Beethoven, Ludwig van": [
+                "*"
+            ],
+            "Currentzis, Teodor": [
+                "*"
+            ],
+            "Davis, Colin": [
+                "*"
+            ],
+            "Haitink, Bernard": [
+                "*"
+            ],
+            "Ligeti, Gyorgy": [
+                "The Ligeti Project"
+            ],
+            "Mahler, Gustav": [
+                "The Complete Mahler Symphonies (Bernstein 2009)"
+            ],
+            "Mendelssohn, Felix": [
+                "*"
+            ],
+            "Petrenko, Vasily": [
+                "*"
+            ],
+            "Winschermann, Helmut": [
+                "*"
+            ]
+        },
+        "Country": {
+            "Cash, Johnny": [
+                "*"
+            ],
+            "Williams, Lucinda": [
+                "*"
+            ]
+        },
+        "Electronic": {
+            "Ash Ra Tempel": [
+                "*"
+            ],
+            "Ashra": [
+                "*"
+            ],
+            "Baumann, Peter": [
+                "*"
+            ],
+            "Jarre, Jean-Michel": [
+                "*"
+            ],
+            "Schulze, Klaus": [
+                "*"
+            ],
+            "System 7": [
+                "*"
+            ],
+            "Tangerine Dream": [
+                "*"
+            ],
+            "Meat Beat Manifesto": [
+                "*"
+            ]
+        },
+        "Folk": {
+            "Orton, Beth": [
+                "*"
+            ],
+            "Dylan, Bob": [
+                "*"
+            ]
+        },
+        "Funk": {
+            "Dr John": [
+                "*"
+            ]
+        },
+        "Jazz": {
+            "Davis, Miles": [
+                "*"
+            ],
+            "Evans, Bill": [
+                "*"
+            ],
+            "Getz, Stan": [
+                "*"
+            ],
+            "Gillespie, Dizzy": [
+                "*"
+            ],
+            "Miles Davis Quintet, The": [
+                "*"
+            ],
+            "Mingus, Charles": [
+                "*"
+            ],
+            "Monk, Thelonious": [
+                "*"
+            ],
+            "Parker, Charlie": [
+                "*"
+            ],
+            "Pepper, Art": [
+                "*"
+            ],
+            "Peterson, Oscar": [
+                "*"
+            ],
+            "Rollins, Sonny": [
+                "*"
+            ]
+        },
+        "Opera": {
+            "Davies, Dennis Russell": [
+                "*"
+            ],
+            "Riesman, Michael": [
+                "Einstein on the Beach (1979)",
+                "Einstein on the Beach (1993)"
+            ],
+            "Solti, Georg": [
+                "Wagner - Der Ring des Nibelungen (Blu-Ray)",
+                "Wagner - Parsifal (1973)",
+                "Wagner - Tannhauser (1971)",
+                "Wagner - Tristan und Isolde (1961)"
+            ]
+        },
+        "Rock": {
+            "Alan Parsons Project, The": [
+                "*"
+            ],
+            "Anderson, Jon": [
+                "Olias of Sunhillow (2021 HR Stereo)",
+                "Song of Seven"
+            ],
+            "Anderson, Laurie": [
+                "*"
+            ],
+            "Barclay James Harvest": [
+                "And Other Short Stories (Deluxe Edition DVD)",
+                "Barclay James Harvest (Deluxe Edition DVD)",
+                "Everyone is Everybody Else (Deluxe Edition DVD)",
+                "Gone to Earth (Deluxe Edition DVD)",
+                "Live Tapes",
+                "Octoberon (Deluxe Edition DVD)",
+                "Time Honoured Ghosts (Deluxe Edition DVD)",
+                "XII (Deluxe Edition DVD)"
+            ],
+            "Be Bop Deluxe": [
+                "Axe Victim (Special Edition DVD)",
+                "Drastic Plastic (Special Edition DVD)",
+                "Futurama (Special Edition DVD)",
+                "Live! In the Air Age (Deluxe Edition)",
+                "Modern Music (Special Edition DVD)",
+                "Sunburst Finish (Special Edition DVD)"
+            ],
+            "Bowie, David": [
+                "*"
+            ],
+            "Cure, The": [
+                "*"
+            ],
+            "Cruise, Julee": [
+                "*"
+            ],
+            "Dire Straits": [
+                "*"
+            ],
+            "Doors, The": [
+                "*"
+            ],
+            "Dylan, Bob": [
+                "*"
+            ],
+            "Fleetwood Mac": [
+                "Boston Volume 1",
+                "Boston Volume 2",
+                "Boston Volume 3",
+                "Fleetwood Mac",
+                "Live (2021 Expanded Reissue)",
+                "Rumours (2019 Remastered and Expanded)",
+                "Tango in the Night (2017 Remaster)",
+                "Tusk (2015 Remaster)"
+            ],
+            "Genesis": [
+                "A Trick of the Tail (SACD)",
+                "Abacab (SACD)",
+                "And Then There Were Three (SACD)",
+                "Duke (SACD)",
+                "Foxtrot (SACD)",
+                "Genesis (SACD)",
+                "Invisible Touch (SACD)",
+                "Live",
+                "Live Over Europe 2007",
+                "Nursery Cryme (SACD)",
+                "Seconds Out",
+                "Selling England by the Pound (SACD)",
+                "The Lamb Lies Down on Broadway (SACD)",
+                "The Way We Walk - Volume 1 - The Shorts",
+                "The Way We Walk - Volume 2 - The Longs",
+                "Three Sides Live",
+                "Trespass",
+                "We Can't Dance (SACD)",
+                "Wind & Wuthering (SACD)"
+            ],
+            "Gentle Giant": [
+                "Octopus (BluRay)",
+                "The Power and the Glory (BluRay)",
+                "Three Piece Suite (BluRay)"
+            ],
+            "Gilmour, David": [
+                "*"
+            ],
+            "Grateful Dead": [
+                "1972-05-26 Lyceum Theatre, London",
+                "1974 Pacific Northwest '73-'74 Complete Recordings",
+                "1977-05-08 Barton Hall, Cornell University, Ithaca NY",
+                "1978-07-08 Red Rocks Ampitheatre, Colorado",
+                "1981-03-09 Madison Square Garden",
+                "American Beauty (50th Anniversary Deluxe Edition)",
+                "Aoxomoxoa (50th Anniversary Deluxe Edition)",
+                "To Terrapin Hartford 77",
+                "Workingman's Dead (50th Anniversary Deluxe Edition)"
+            ],
+            "Harper, Roy": [
+                "*"
+            ],
+            "Jethro Tull": [
+                "A (A La Mode Edition DVD)",
+                "A Passion Play (An Extended Performance DVD)",
+                "Aqualung (Adapted Edition DVD)",
+                "Benefit (Collector's Edition DVD)",
+                "Bursting Out (The Inflated Edition DVD)",
+                "Heavy Horses (New Shoes Edition DVD)",
+                "Living In The Past",
+                "Minstrel in the Gallery (La Grande Edition DVD)",
+                "Songs from the Wood (The Country Set DVD)",
+                "Stand Up (Elevated Edition DVD)",
+                "Stormwatch (40th Anniversary Force 10 Edition DVD)",
+                "The Broadsword and the Beast (40th Anniversary Monster Edition DVD)",
+                "Thick as a Brick (40th Anniversary Collector's Edition DVD)",
+                "This Was (50th Anniversary Edition DVD)",
+                "Too Old to Rock'n'Roll Too Young to Die (TV Special Edition DVD)",
+                "War Child (40th Anniversary Theatre Edition DVD)"
+            ],
+            "Jones, Rickie Lee": [
+                "*"
+            ],
+            "King Crimson": [
+                "Absent Lovers",
+                "Beat",
+                "Discipline (40th Anniversary Series DVD)",
+                "Earthbound (40th Anniversary Series DVD)",
+                "In the Court of the Crimson King (40th Anniversary Series DVD)",
+                "In the Wake of Poseidon",
+                "Islands",
+                "Larks' Tongues in Aspic",
+                "Lizard",
+                "Red (50th Anniversary Edition)",
+                "Sheltering Skies",
+                "Starless and Bible Black (40th Anniversary Series DVD)",
+                "The Deception of the Thrush",
+                "The Nightwatch",
+                "THRAK",
+                "THRaKaTTaK",
+                "Three of a Perfect Pair",
+                "USA"
+            ],
+            "Mitchell, Joni": [
+                "*"
+            ],
+            "Mogwai": [
+                "*"
+            ],
+            "Morrison, Van": [
+                "*"
+            ],
+            "Ozric Tentacles": [
+                "*"
+            ],
+            "Nine Inch Nails": [
+                "*"
+            ],
+            "Nodens Ictus": [
+                "*"
+            ],
+            "Numan, Gary": [
+                "*"
+            ],
+            "Pink Floyd": [
+                "A Momentary Lapse of Reason (2011 Discovery Edition)",
+                "A Saucerful of Secrets (2011 Discovery Edition)",
+                "Animals (2018 Remix BluRay)",
+                "Delicate Sound of Thunder (BluRay)",
+                "Live at Knebworth 1990",
+                "Live At Pompeii MCMLXXII (2025 Steven Wilson Remix)",
+                "Meddle (2011 Discovery Edition)",
+                "Pulse (2022 BluRay)",
+                "The Dark Side of the Moon (2011 Immersion Edition)",
+                "The Dark Side of the Moon (50th Anniversary Remaster Blu-Ray)",
+                "The Division Bell (2011 Discovery Edition)",
+                "The Final Cut (2011 Discovery Edition)",
+                "The Piper at the Gates of Dawn (2011 Discovery Edition)",
+                "The Wall (2012 Immersion Edition)",
+                "Ummagumma (2011 Discovery Edition)",
+                "Wish You Were Here (2011 Immersion Edition)"
+            ],
+            "Portishead": [
+                "*"
+            ],
+            "Psychedelic Furs, The": [
+                "*"
+            ],
+            "Radiohead": [
+                "*"
+            ],
+            "Red Noise": [
+                "Art Empire Industry (DVD)"
+            ],
+            "Springsteen, Bruce": [
+                "*"
+            ],
+            "Vega, Suzanne": [
+                "*"
+            ],
+            "Wakeman, Rick": [
+                "*"
+            ],
+            "Waters, Roger": [
+                "*"
+            ],
+            "Wynne, Ed": [
+                "*"
+            ],
+            "Yes": [
+                "Close To The Edge (Blu-Ray)",
+                "Fragile (Blu-Ray)",
+                "Going For The One (HRA)",
+                "Progeny - Seven Shows from Seventy-Two",
+                "Relayer (Blu-Ray)",
+                "Tales From Topographic Oceans (Blu-Ray)",
+                "The Word is Live",
+                "The Yes Album (Blu-Ray)",
+                "Tormato (HRA)",
+                "Yesshows",
+                "Yessongs (HRA)"
+            ]
+        }
+    }
+}
